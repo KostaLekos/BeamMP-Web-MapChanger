@@ -1,0 +1,16 @@
+h1 {
+ 	border-bottom: 3px solid currentColor;
+	padding-bottom: 0.5rem;
+	text-align: center;
+}
+
+.img-row-1 {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+ 			
+.img-row-1 img {
+	width: 30%;
+	height: auto;
+}
