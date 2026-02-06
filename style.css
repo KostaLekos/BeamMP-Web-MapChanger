@@ -4,6 +4,8 @@ h1 {
 	text-align: center;
 }
 
+
+
 .img-row-1 {
 	display: flex;
 	justify-content: space-evenly;
@@ -11,6 +13,93 @@ h1 {
 }
  			
 .img-row-1 img {
+	width: 30%;
+	height: auto;
+}
+
+
+.button-row-1 {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.button-row-1 button {
+	width: 30%;
+	height: auto;
+}
+
+
+
+.img-row-2 {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+ 			
+.img-row-2 img {
+	width: 30%;
+	height: auto;
+}
+
+
+.button-row-2 {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.button-row-2 button {
+	width: 30%;
+	height: auto;
+}
+
+
+
+.img-row-3 {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+ 			
+.img-row-3 img {
+	width: 30%;
+	height: auto;
+}
+
+
+.button-row-3 {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.button-row-3 button {
+	width: 30%;
+	height: auto;
+}
+
+
+
+.img-row-4 {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+ 			
+.img-row-4 img {
+	width: 30%;
+	height: auto;
+}
+
+
+.button-row-4 {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.button-row-4 button {
 	width: 30%;
 	height: auto;
 }
