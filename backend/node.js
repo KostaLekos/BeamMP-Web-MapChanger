@@ -1,7 +1,7 @@
 const http = require("http");
 const { spawn } = require("child_process");
 
-const JAVA_DIR = "/app/html"; // inside container
+const JAVA_DIR = "/app/backend"; // inside container
 const JAVA_CMD = "java";
 
 http.createServer((req, res) => {
