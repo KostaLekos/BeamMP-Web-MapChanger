@@ -11,6 +11,6 @@ public class Choice {
 
         String b = bin.toBinary(args[0]);
 
-        Files.writeString(file, b);
+        Files.writeString(file, args[0]);
     }
 }
