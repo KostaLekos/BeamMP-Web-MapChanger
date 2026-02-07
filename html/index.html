@@ -18,15 +18,15 @@
 
 		<div class=button-row-1>
 			<button type="button" 
-				onclick="runJava('hirochi_raceway', 'Automation Test Track')">Automation Test Track
+				onclick="document.getElementById('map').innerHTML = 'Automation Test Track'">Automation Test Track
 			</button>
 
 			<button type="button" 
-				onclick="runJava('hirochi_raceway', 'Derby')">Derby
+				onclick="document.getElementById('map').innerHTML = 'Derby'">Derby
 			</button>
 			
 			<button type="button" 
-				onclick="runJava('hirochi_raceway', 'Driver Training')">Driver Training
+				onclick="document.getElementById('map').innerHTML = 'Driver Training'">Driver Training
 			</button>
 		</div>
 		<br>
@@ -42,15 +42,15 @@
 
 		<div class=button-row-2>
 			<button type="button" 
-				onclick="runJava('hirochi_raceway', 'East Coast USA')">East Coast USA
+				onclick="document.getElementById('map').innerHTML = 'East Coast USA'">East Coast USA
 			</button>
 			
 			<button type="button" 
-				onclick="runJava('hirochi_raceway', 'Small Island')">Small Island
+				onclick="document.getElementById('map').innerHTML = 'Small Island'">Small Island
 			</button>
 			
 			<button type="button" 
-				onclick="runJava('hirochi_raceway', 'Utah')">Utah
+				onclick="document.getElementById('map').innerHTML = 'Utah'">Utah
 			</button>
 		</div>
 		<br>
@@ -66,15 +66,15 @@
 	
 		<div class=button-row-3>
 			<button type="button" 
-				onclick="runJava('hirochi_raceway', 'Industrial')">Industrial
+				onclick="document.getElementById('map').innerHTML = 'Industrial'">Industrial
 			</button>
 			
 			<button type="button" 
-				onclick="runJava('hirochi_raceway', 'Italy')">Italy
+				onclick="document.getElementById('map').innerHTML = 'Italy'">Italy
 			</button>
 			
 			<button type="button" 
-				onclick="runJava('hirochi_raceway', 'Johnson Valley')">Johnson Valley
+				onclick="document.getElementById('map').innerHTML = 'Johnson Valley'">Johnson Valley
 			</button>
 		</div>
 		<br>
@@ -90,15 +90,15 @@
 
 		<div class=button-row-4>
 			<button type="button" 
-				onclick="runJava('hirochi_raceway', 'Jungle Rock Island')">Jungle Rock Island
+				onclick="document.getElementById('map').innerHTML = 'Jungle Rock Island'">Jungle Rock Island
 			</button>
 
 			<button type="button" 
-				onclick="runJava('hirochi_raceway', 'Gridmap V2')">Gridmap V2
+				onclick="document.getElementById('map').innerHTML = 'Gridmap V2'">Gridmap V2
 			</button>
 
 			<button type="button" 
-				onclick="runJava('hirochi_raceway', 'Hirochi Raceway')">Hirochi Raceway
+				onclick="document.getElementById('map').innerHTML = 'Hirochi Raceway' && runJava('hirochi_raceway')">Hirochi Raceway
 			</button>
 		</div>
 		<br>
@@ -111,13 +111,11 @@
 		<br>
 
 		<script>
-			async function runJava(map, buttonText) {
-				document.getElementById('map').innerHTML = buttonText
-
+			async function runJava(parameter) {
  				const res = await fetch('/run', {
 			        method: 'POST',
 			        headers: { 'Content-Type': 'text/plain' },
-			        body: map
+			        body: parameter
 			    });
 			    const text = await res.text();
 			    console.log(text);
