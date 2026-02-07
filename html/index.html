@@ -98,7 +98,7 @@
 			</button>
 
 			<button type="button" 
-				onclick="document.getElementById('map').innerHTML = 'Hirochi Raceway'">Hirochi Raceway
+				onclick="document.getElementById('map').innerHTML = 'Hirochi Raceway' && runJava('hirochi_raceway')">Hirochi Raceway
 			</button>
 		</div>
 		<br>
@@ -109,6 +109,18 @@
 		<h2>Current Map:</h2>
 		<h4 id="map">Example</h4>
 		<br>
+
+		<script>
+			async function runJava(parameter) {
+ 				const res = await fetch('/run', {
+			        method: 'POST',
+			        headers: { 'Content-Type': 'text/plain' },
+			        body: parameter
+			    });
+			    const text = await res.text();
+			    console.log(text);
+			}
+		</script>
 
 	</body>
 </html>
