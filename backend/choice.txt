@@ -1,1 +1,1 @@
-gridmap_v2
+gridmap_legacy
