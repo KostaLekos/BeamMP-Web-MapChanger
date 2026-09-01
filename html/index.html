@@ -147,6 +147,24 @@
 			    console.log(text);
 			    window.alert('Map changed to ' + parameter + '. Server will now restart.');
 			}
+
+      async function loadCurrentMap() {
+          const response = await fetch('/get');
+
+          if (!response.ok) {
+            throw new Error(`GET /get failed with status ${response.status}`);
+          }
+
+          const current_map = await response.text();
+
+          document.getElementById('map').innerHTML = current_map;
+      }
+
+      loadCurrentMap().catch(error => {
+        console.error("Could not load current map:", error);
+        document.getElementById("map").textContent = "Unable to load map";
+      });
+
 		</script>
 
 	</body>

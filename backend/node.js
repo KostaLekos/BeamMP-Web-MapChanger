@@ -1,5 +1,6 @@
 const http = require("http");
 const { spawn } = require("child_process");
+const fs = require("fs");
 
 const JAVA_DIR = "/app/backend"; // inside container
 const JAVA_CMD = "java";
@@ -25,6 +26,17 @@ http.createServer((req, res) => {
       child.on("close", () => res.end(output || "OK"));
     });
 
+  } else if (req.method === "GET" && req.url === "/get") {
+
+    const output = fs.
+      readFileSync("/app/backend/choice.txt", "utf8")
+      .trim();
+
+    res.writeHead(200, {
+      "Content-Type": "text/plain; charset=utf-8"
+    });
+
+    res.end(output || "Unknown");
   } else {
     res.writeHead(404);
     res.end("Not found");
