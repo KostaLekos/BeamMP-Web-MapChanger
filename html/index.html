@@ -136,15 +136,19 @@
 
 		<script>
 			async function runJava(parameter) {
-				document.getElementById('map').innerHTML = parameter
-
- 				const res = await fetch('/run', {
+ 				  const res = await fetch('/run', {
 			        method: 'POST',
 			        headers: { 'Content-Type': 'text/plain' },
 			        body: parameter
 			    });
 			    const text = await res.text();
 			    console.log(text);
+
+          loadCurrentMap().catch(error => {
+            console.error("Could not load current map:", error);
+            document.getElementById("map").textContent = "Unable to load map";
+          });
+
 			    window.alert('Map changed to ' + parameter + '. Server will now restart.');
 			}
 

@@ -25,8 +25,27 @@ public class Choice {
         Files.write(file, lines, StandardOpenOption.TRUNCATE_EXISTING); // writes map to ServerConfig.toml
         System.out.println("Map updated to: " + newMap);
 
-	Path txt = Path.of("choice.txt"); // logs map
-	Files.writeString(txt, args[0]);
+	    Path txt = Path.of("choice.txt"); // logs map
+      String map = switch (args[0]) {
+        case "automation_test_track" -> "Automation Test Track"; 
+        case "derby" -> "Derby"; 
+        case "driver_training" -> "Driver Training"; 
+        case "east_coast_usa" -> "East Coast USA"; 
+        case "small_island" -> "Small Island"; 
+        case "utah" -> "Utah"; 
+        case "industrial" -> "Industrial"; 
+        case "italy" -> "Italy"; 
+        case "johnson_valley" -> "Johnson Valley"; 
+        case "jungle_rock_island" -> "Jungle Rock Island"; 
+        case "gridmap_v2" -> "Gridmap V2"; 
+        case "hirochi_raceway" -> "Hirochi Raceway"; 
+        case "west_coast_usa" -> "West Coast USA"; 
+        case "gridmap_legacy" -> "Gridmap Legacy"; 
+        case "smallgrid" -> "Small Grid"; 
+        default -> args[0];
+      };
+
+	    Files.writeString(txt, map);
     }
 }
 
